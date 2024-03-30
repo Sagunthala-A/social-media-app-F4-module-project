@@ -1,0 +1,72 @@
+
+.header{
+    background-color: var(--navTheme);
+    color:var(--white);
+    display:flex;
+    align-items: center;
+    height:100px;
+    width:100%;
+    justify-content:start;
+    box-shadow: var(--navBoxShadow);
+}
+/* 
+X
+4
+Y
+14
+Blur
+24
+Spread
+0
+rgba(255, 190, 157, 0.81) */
+
+.header__logo{
+    flex:.3;
+    margin-left:20px;
+    margin-right:100px;
+}
+
+.header__icons{
+    background-color: var(--white);
+    color:var(--navTheme);
+    flex:.3;
+    height:75px;
+    border-radius:50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icon{
+    /* padding:10px; */
+    opacity:.5;
+    transition: transform 250ms linear
+}
+
+.icon:hover{
+    opacity:1;
+    transform: scale(1.2);
+}
+
+.icon-container {
+    position: relative; /* Required for positioning the pulse */
+}
+
+/* Define the circle below the icon */
+.icon-container::after {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute;
+  bottom: -13px; /* Adjust this value to position the circle */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  width: 8px;
+  height: 8px;
+  background-color: transparent; /* Initially transparent */
+  border-radius: 50%; /* Creates a circle */
+  transition: background-color 900ms ease;
+}
+
+/* Apply circle color on hover */
+.icon-container:hover::after{
+  background-color:var(--navTheme);
+}
